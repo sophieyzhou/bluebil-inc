@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BlueBil's mission: equitable neonatal jaundice detection for every baby, everywhere. Meet the team and learn our story." />
+  <title>About — BlueBil</title>
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/nav-footer.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+</head>
+<body>
+
+  <div id="nav-mount"></div>
+
+  <main>
+
+    <!-- ── MISSION HERO ──────────────────────────────────────── -->
+  <section class="mission-hero">
+    <div class="container">
+      <div class="mission-hero-inner">
+
+        <!-- Left: copy -->
+        <div class="mission-hero-copy">
+          <p class="label" style="color:var(--color-accent)">Our Mission</p>
+          <h1>Every baby deserves the same standard of care.</h1>
+          <p>Neonatal jaundice is one of the most treatable conditions in newborn medicine — yet diagnostic inequity means darker-skinned babies are systematically under-screened and over-harmed. BlueBil exists to close that gap.</p>
+          <div class="mission-hero-actions">
+            <a href="#team" class="btn btn--accent">Meet the Team</a>
+            <a href="#impact" class="btn btn--outline-light">Our Global Impact</a>
+          </div>
+        </div>
+
+        <!-- Right: globe visual -->
+        <div class="mission-hero-visual">
+          <img
+            class="mission-hero-globe"
+            src="assets/images/globe.png"
+            alt="University of Michigan globe"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- ── IMPACT NUMBERS BAR ────────────────────────────────── -->
+    <div class="impact-bar">
+      <div class="container">
+        <div class="impact-numbers">
+          <div class="impact-num">
+            <div class="impact-num__value"><span class="stat-counter" data-target="114" data-suffix="M">0M</span></div>
+            <div class="impact-num__label">newborns affected globally per year</div>
+          </div>
+          <div class="impact-num">
+            <div class="impact-num__value"><span class="stat-counter" data-target="100" data-suffix="×">0×</span></div>
+            <div class="impact-num__label">more severe jaundice in LMICs</div>
+          </div>
+          <div class="impact-num">
+            <div class="impact-num__value"><em>$</em><span class="stat-counter" data-target="135" data-suffix="M">0M</span></div>
+            <div class="impact-num__label">global jaundice detection market (2024)</div>
+          </div>
+          <div class="impact-num">
+            <div class="impact-num__value"><span class="stat-counter" data-target="4" data-suffix="M">0M</span></div>
+            <div class="impact-num__label">neonates diagnosed with jaundice in the US annually</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MISSION STATEMENT ─────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <div class="mission-statement reveal">
+          <blockquote>
+            "A baby's skin tone should never determine the quality of their jaundice diagnosis. The eye doesn't carry that bias — so we built a device that measures there instead."
+          </blockquote>
+          <cite>— BlueBil Co-Founders, University of Michigan</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OUR STORY ─────────────────────────────────────────── -->
+    <section class="section section--alt" id="story" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="grid-2" style="gap:var(--space-16);align-items:start">
+
+          <div class="reveal">
+            <p class="label label--primary">Our Story</p>
+            <div class="divider"></div>
+            <h2 id="story-heading">From a conversation in Detroit to a global health problem</h2>
+            <p style="margin-top:var(--space-5)">BlueBil began not in a lab, but in a conversation. After speaking with neonatologists at Henry Ford St. John Hospital in Detroit and clinicians at Komfo Anokye Teaching Hospital in Kumasi, Ghana, the same frustration emerged from both sides of the world: existing non-invasive bilirubin tools were failing darker-skinned babies — and no one had fixed it.</p>
+            <p style="margin-top:var(--space-4)">We believed the solution was hiding in plain sight. The sclera — the white of the eye — yellows with bilirubin just like the skin, but without melanin interference. The science was there. The device wasn't. So we built it.</p>
+          </div>
+
+          <div class="timeline reveal reveal-delay-1">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2024</div>
+              <h4>Stakeholder Discovery</h4>
+              <p>Clinical conversations at Henry Ford St. John (Detroit) and Komfo Anokye Teaching Hospital (Ghana) surface the equity gap in neonatal bilirubin diagnostics.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Late 2024</div>
+              <h4>Proof of Concept — Glasses Platform</h4>
+              <p>First prototype fabricated using SLA-printed glasses frame with embedded blue LED, IR LED, and matched phototransistors. Core scleral sensing principle validated with first calibration dataset.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2025</div>
+              <h4>Pistol-Grip Prototype</h4>
+              <p>Transitioned to handheld pistol-grip enclosure with three-wavelength architecture, rubber barrel guard, and full ESP32 firmware. Five phantom concentrations validated: R² = 0.976.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Early 2026</div>
+              <h4>Rice360 Design Competition</h4>
+              <p>BlueBil presented at the Rice360 Institute for Global Health Technologies 16th Annual Design Competition. University of Michigan Innovation Partnerships engaged for patentability assessment.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Next</div>
+              <h4>Clinical Pilot Studies</h4>
+              <p>Enhanced scattering phantoms, dual-wavelength model refinement, and partnership with domestic and international NICU programs for paired TSB-TsB validation across a diverse neonatal population.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEAM ───────────────────────────────────────────────── -->
+    <section class="section" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header--center reveal">
+          <p class="label label--primary">The Team</p>
+          <div class="divider divider--center"></div>
+          <h2 id="team-heading">Four co-founders, one shared conviction</h2>
+          <p style="margin-top:var(--space-4)">We combine biomedical engineering, economics, and computer science — all shaped by a conviction that where a baby is born, or what they look like, should never determine whether they receive a timely diagnosis.</p>
+        </div>
+
+        <div class="team-expanded stagger-children">
+
+          <div class="team-card-full">
+            <div class="team-avatar-lg"><img src="assets/images/headshots/nick.png" alt="Nick Litsas"></div>
+            <div class="team-info">
+              <h3>Nick Litsas</h3>
+              <div class="role">CEO &amp; Co-Founder</div>
+              <div class="dept">B.S.E. Biomedical Engineering · University of Michigan</div>
+              <p>Nick leads product strategy, stakeholder relationships, and the clinical development roadmap. He identified the diagnostic equity gap through direct conversations with neonatologists and has driven BlueBil from initial concept through bench-top validation.</p>
+            </div>
+          </div>
+
+          <div class="team-card-full">
+            <div class="team-avatar-lg"><img src="assets/images/headshots/ben.png" alt="Ben Barron"></div>
+            <div class="team-info">
+              <h3>Ben Barron</h3>
+              <div class="role">CTO &amp; Co-Founder</div>
+              <div class="dept">B.S.E. Biomedical Engineering · University of Michigan</div>
+              <p>Ben architects BlueBil's sensing electronics and embedded firmware — from the three-channel LED/phototransistor circuit to the ESP32 state machine and Beer-Lambert estimation model. He designed and validated the current prototype from schematic to enclosure.</p>
+            </div>
+          </div>
+
+          <div class="team-card-full">
+            <div class="team-avatar-lg"><img src="assets/images/headshots/spero.png" alt="Spero Litsas"></div>
+            <div class="team-info">
+              <h3>Spero Litsas</h3>
+              <div class="role">COO &amp; Co-Founder</div>
+              <div class="dept">B.A. Economics · University of Michigan</div>
+              <p>Spero drives BlueBil's go-to-market strategy, manufacturing cost modeling, and global health market entry. He structures our LMIC pricing model, reimbursement pathway analysis, and operational framework for scaling from prototype to deployment.</p>
+            </div>
+          </div>
+
+          <div class="team-card-full">
+            <div class="team-avatar-lg"><img src="assets/images/headshots/sophie.png" alt="Sophie Zhou"></div>
+            <div class="team-info">
+              <h3>Sophie Zhou</h3>
+              <div class="role">CFO &amp; Co-Founder</div>
+              <div class="dept">B.S. Computer Science · University of Michigan</div>
+              <p>Sophie manages BlueBil's financial modeling, investor relations, and data infrastructure. Her CS background informs our firmware architecture decisions and lays the foundation for future software-enabled calibration and data analytics capabilities.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GLOBAL IMPACT ──────────────────────────────────────── -->
+    <section class="section section--dark" id="impact" aria-labelledby="impact-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="label" style="color:var(--color-ice)">Global Impact</p>
+          <div class="divider"></div>
+          <h2 id="impact-heading" style="color:#fff">A diagnostic gap with global consequences</h2>
+        </div>
+
+        <div class="grid-2" style="gap:var(--space-12);align-items:start">
+          <div class="reveal">
+            <p>Severe neonatal jaundice is nearly 100 times more prevalent in low- and middle-income countries, where it ranks as the 7th and 8th leading cause of neonatal death in Sub-Saharan Africa and South Asia respectively. Laboratory infrastructure, trained personnel, and consumable supplies needed for serum bilirubin testing are frequently unavailable.</p>
+            <p style="margin-top:var(--space-4)">Many births occur in rural clinics where laboratory turnaround times may be delayed by hours to days, preventing timely intervention during the narrow therapeutic window in which severe hyperbilirubinemia can be safely treated.</p>
+            <p style="margin-top:var(--space-4)">BlueBil's reusable, consumable-free design and infrastructure-independent operation directly address these constraints. Our tiered pricing model targets sub-$400 LMIC deployment through institutional procurement, NGO-subsidized distribution, and public health purchasing programs.</p>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+
+              <div style="background:var(--color-dark-surface);border:1px solid var(--color-border-dark);border-radius:var(--radius-xl);padding:var(--space-6)">
+                <div style="font-family:var(--font-display);font-size:var(--text-3xl);color:var(--color-ice);line-height:1;margin-bottom:var(--space-2)">$264M</div>
+                <p style="font-size:var(--text-sm)">Projected global jaundice detection market by 2032 (from $135.5M in 2024)</p>
+              </div>
+
+              <div style="background:var(--color-dark-surface);border:1px solid var(--color-border-dark);border-radius:var(--radius-xl);padding:var(--space-6)">
+                <div style="font-family:var(--font-display);font-size:var(--text-3xl);color:var(--color-accent);line-height:1;margin-bottom:var(--space-2)">$57–60M</div>
+                <p style="font-size:var(--text-sm)">Serviceable obtainable market — US NICUs and mother-baby units alone</p>
+              </div>
+
+              <div style="background:var(--color-dark-surface);border:1px solid var(--color-border-dark);border-radius:var(--radius-xl);padding:var(--space-6)">
+                <div style="font-family:var(--font-display);font-size:var(--text-3xl);color:#fff;line-height:1;margin-bottom:var(--space-2)">~$38</div>
+                <p style="font-size:var(--text-sm)">Estimated COGS at 10,000-unit production volume — enabling strong margins at LMIC pricing</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinical partners -->
+        <div style="margin-top:var(--space-16)" class="reveal">
+          <p class="label" style="color:rgba(238,241,246,0.4)">Clinical Engagement</p>
+          <div class="divider"></div>
+          <div class="partners-strip">
+            <div class="partner-logo partner-logo--wide partner-logo--light">
+              <img src="assets/images/logos/logo-henry-ford.png" alt="Henry Ford Health">
+            </div>
+
+            <div class="partner-logo partner-logo--seal partner-logo--light">
+              <img src="assets/images/logos/logo-kath.png" alt="Komfo Anokye Teaching Hospital">
+            </div>
+
+            <div class="partner-logo partner-logo--wide partner-logo--light">
+              <img src="assets/images/logos/logo-rice360.png" alt="Rice360 Institute">
+            </div>
+
+            <div class="partner-logo partner-logo--umich partner-logo--light">
+              <img src="assets/images/logos/um-logo.png" alt="University of Michigan">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Join us in closing the gap</h2>
+          <p>Whether you're a NICU director, a global health investor, or an NGO procurement organization — we want to hear from you.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn--accent btn--lg">Get In Touch</a>
+            <a href="science.html" class="btn btn--outline-light btn--lg">Explore the Science</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/animate.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('.site-nav');
+      if (nav) nav.classList.add('nav-light');
+    });
+  </script>
+</body>
+</html>

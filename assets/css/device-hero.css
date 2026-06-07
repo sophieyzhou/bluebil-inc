@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
+
+:root {
+  --blue: #1a4f9e;
+  --blue-dark: #12396f;
+  --blue-glow: #18b6ff;
+  --amber: #e8a020;
+  --ink: #172033;
+  --muted: #5f6b7a;
+  --paper: #f8fbff;
+  --white: #ffffff;
+  --line: #dbe4f0;
+  --shadow: 0 24px 70px rgba(26, 79, 158, 0.18);
+  --font-heading: "DM Serif Display", serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.demo-shell { overflow: hidden; }
+
+.device-hero-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(340px, 1.1fr);
+  gap: clamp(28px, 5vw, 80px);
+  align-items: center;
+  padding: clamp(56px, 8vw, 110px) 8%;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(232, 160, 32, 0.22), transparent 28%),
+    radial-gradient(circle at 75% 55%, rgba(24, 182, 255, 0.16), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #edf5ff 100%);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--amber);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.device-hero-copy h1,
+.story-preview h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  color: var(--blue-dark);
+  line-height: 0.98;
+}
+
+.device-hero-copy h1 {
+  max-width: 680px;
+  font-size: clamp(3.25rem, 7.5vw, 7rem);
+}
+
+.device-hero-copy p:not(.eyebrow),
+.story-preview p:not(.eyebrow) {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: white;
+  background: var(--blue);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  color: var(--blue-dark);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+}
+
+.device-hero-visual {
+  position: relative;
+  min-height: 560px;
+  perspective: 1200px;
+}
+
+.device-card {
+  position: relative;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: deviceFloat 5s ease-in-out infinite;
+  transition: transform 180ms ease-out;
+}
+
+.device-render {
+  display: block;
+  width: 100%;
+  border-radius: 34px;
+  filter: drop-shadow(0 32px 42px rgba(18, 57, 111, 0.22));
+  user-select: none;
+  pointer-events: none;
+}
+
+.oled-overlay {
+  position: absolute;
+  left: 39.5%;
+  top: 26.5%;
+  width: 20.5%;
+  height: 10.5%;
+  padding: 0.55vw 0.7vw;
+  border-radius: 9px;
+  background: linear-gradient(160deg, #071017 0%, #11161a 100%);
+  box-shadow: inset 0 0 14px rgba(24, 182, 255, 0.16), 0 0 16px rgba(24, 182, 255, 0.14);
+  color: white;
+  transform: rotate(-7deg) skewX(-2deg);
+  overflow: hidden;
+}
+
+.oled-brand {
+  color: #15b9ff;
+  font-weight: 700;
+  font-size: clamp(0.72rem, 1.6vw, 1.45rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.oled-rule {
+  height: 1px;
+  margin: 5px 0 3px;
+  background: linear-gradient(90deg, transparent, #15b9ff, transparent);
+}
+
+.oled-main {
+  font-size: clamp(0.9rem, 2.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.oled-sub {
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  color: rgba(255,255,255,0.86);
+  font-size: clamp(0.42rem, 0.85vw, 0.8rem);
+  font-weight: 700;
+}
+
+.oled-bar {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 13%;
+  height: 12%;
+  border: 1px solid rgba(24, 182, 255, 0.42);
+  border-radius: 99px;
+  opacity: 0;
+}
+
+.oled-bar span {
+  display: block;
+  height: 100%;
+  width: 20%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue-glow), var(--amber));
+}
+
+.oled-overlay.is-positioning .oled-bar { opacity: 1; }
+.oled-overlay.is-positioning .oled-sub { opacity: 0; }
+.oled-overlay.is-measuring .oled-main { animation: blink 0.9s steps(2, start) infinite; }
+.oled-overlay.is-recommend .oled-sub { color: var(--amber); }
+
+.probe-glow {
+  position: absolute;
+  left: 17.4%;
+  top: 34.4%;
+  width: 9%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translateZ(35px);
+  background: radial-gradient(circle, rgba(255,255,255,0.95) 0 10%, rgba(24,182,255,0.95) 16%, rgba(24,182,255,0.38) 42%, transparent 70%);
+  filter: blur(0.5px);
+  animation: probePulse 2.4s ease-in-out infinite;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.callout {
+  position: absolute;
+  z-index: 2;
+  padding: 7px 10px;
+  border: 1px solid rgba(26, 79, 158, 0.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.82);
+  color: var(--blue-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(26, 79, 158, 0.12);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.device-card:hover .callout { opacity: 1; transform: translateY(0); }
+.callout-oled { left: 58%; top: 21%; }
+.callout-probe { left: 6%; top: 31%; }
+.callout-trigger { left: 36%; top: 54%; }
+.callout-grip { left: 58%; top: 73%; }
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle-field span {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(24, 182, 255, 0.55);
+  filter: blur(0.2px);
+  animation: particleRise linear infinite;
+}
+
+.story-preview {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(280px, 1fr);
+  gap: clamp(26px, 5vw, 70px);
+  align-items: center;
+  padding: clamp(56px, 8vw, 110px) 8%;
+  background: white;
+}
+
+.story-preview img {
+  width: 100%;
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+}
+
+.story-preview h2 { font-size: clamp(2.4rem, 5vw, 4.6rem); }
+
+@keyframes deviceFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -16px; }
+}
+
+@keyframes probePulse {
+  0%, 100% { opacity: 0.72; scale: 0.92; }
+  50% { opacity: 1; scale: 1.08; }
+}
+
+@keyframes blink { 50% { opacity: 0.35; } }
+
+@keyframes particleRise {
+  from { transform: translateY(35px); opacity: 0; }
+  20% { opacity: 0.9; }
+  to { transform: translateY(-160px); opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .device-hero-section,
+  .story-preview {
+    grid-template-columns: 1fr;
+  }
+  .device-hero-visual { min-height: auto; }
+  .oled-overlay { left: 39.3%; top: 26%; }
+}
+
+/* ============================================================
+   index.html hero — device image + sparkle overlay
+   ============================================================ */
+
+.device-hero-scene {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  user-select: none;
+}
+
+#device-hero-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  cursor: default;
+  animation: deviceFloat 5s ease-in-out infinite;
+  will-change: transform;
+  transition: none;
+}
+
+@keyframes deviceFloat {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ── BASE DEVICE PHOTO ─────────────────────────────────────── */
+
+.device-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  filter: drop-shadow(0 24px 60px rgba(26, 79, 158, 0.5))
+          drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+/* ── SPARKLE OVERLAY ───────────────────────────────────────── */
+
+.sparkle-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/device/sparkle.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  border-radius: 0;
+  animation: sparkleFade 3.8s ease-in-out infinite;
+}
+
+@keyframes sparkleFade {
+  0%   { opacity: 0; }
+  30%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.sparkle-overlay--delayed {
+  animation-delay: 1.9s;
+  transform: scale(1.04) translateX(-1%) translateY(-1%);
+  opacity: 0;
+}
+
+/* ── PROBE GLOW ────────────────────────────────────────────── */
+
+#device-hero-wrapper .probe-glow {
+  position: absolute;
+  left: 6%;
+  top: 38%;
+  width: 7%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 216, 248, 0.95) 0%,
+    rgba(74, 158, 255, 0.65)  28%,
+    rgba(26, 79, 158, 0.22)   62%,
+    transparent               100%
+  );
+  pointer-events: none;
+  animation: probeGlowHero 2.4s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes probeGlowHero {
+  0%, 100% { transform: scale(1);    opacity: 0.8; }
+  50%       { transform: scale(1.4); opacity: 1;   }
+}
+
+/* ── GROUND SHADOW ─────────────────────────────────────────── */
+
+.device-shadow {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 12px;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(26, 79, 158, 0.3) 0%, transparent 100%);
+  border-radius: 50%;
+  animation: shadowPulse 5s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(5px);
+}
+
+@keyframes shadowPulse {
+  0%, 100% { transform: translateX(-50%) scaleX(1);    opacity: 0.55; }
+  50%       { transform: translateX(-50%) scaleX(0.84); opacity: 0.3;  }
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+  #device-hero-wrapper { max-width: 340px; }
+}
+
+@media (max-width: 480px) {
+  #device-hero-wrapper { max-width: 270px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #device-hero-wrapper  { animation: none; }
+  .sparkle-overlay      { animation: none; opacity: 0.5; }
+  #device-hero-wrapper .probe-glow { animation: none; opacity: 0.8; }
+  .device-shadow        { animation: none; }
+}

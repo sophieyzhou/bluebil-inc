@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Partner with BlueBil. Clinical partners, investors, NGOs, and press — we want to hear from you." />
+  <title>Contact — BlueBil</title>
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/nav-footer.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+</head>
+<body>
+
+  <div id="nav-mount"></div>
+
+  <main>
+
+    <!-- ── CONTACT HERO ──────────────────────────────────────── -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero-inner">
+          <p class="label" style="color:var(--color-ice)">Get In Touch</p>
+          <h1>Let's bring BlueBil to every NICU.</h1>
+          <p>Whether you're a neonatologist interested in a clinical pilot, an investor aligned with global health equity, or a media contact — we'd love to talk.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MAIN CONTACT SECTION ──────────────────────────────── -->
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Sidebar info cards -->
+          <div class="contact-info reveal">
+
+            <div id="clinical" class="contact-type-card">
+              <div class="contact-type-card__icon" style="background:var(--color-primary-tint);color:var(--color-primary)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <h3>Clinical Partners</h3>
+              <p>We're actively seeking NICU directors and neonatology researchers for paired TSB-TsB validation studies across diverse neonatal populations — domestically and internationally.</p>
+              <span class="contact-type-card__link">Reach out about a pilot study →</span>
+            </div>
+
+            <div id="invest" class="contact-type-card">
+              <div class="contact-type-card__icon" style="background:var(--color-accent-tint);color:var(--color-accent-dark)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <h3>Investors</h3>
+              <p>We are seeking seed-stage investment to fund clinical validation, MVP manufacturing, and FDA pre-submission activities. Market opportunity: $264M+ by 2032.</p>
+              <span class="contact-type-card__link">Request a pitch deck →</span>
+            </div>
+
+            <div id="press" class="contact-type-card">
+              <div class="contact-type-card__icon" style="background:var(--color-ice-tint);color:var(--color-ice-deep)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                </svg>
+              </div>
+              <h3>Press &amp; Media</h3>
+              <p>Journalists covering global health, medical devices, or diagnostic equity — we have data, prototypes, and co-founders available for interviews.</p>
+              <span class="contact-type-card__link">Request press materials →</span>
+            </div>
+
+          </div>
+
+          <!-- Contact Form -->
+          <div class="reveal reveal-delay-1">
+            <div class="contact-form">
+
+              <h2 id="contact-heading" style="font-size:var(--text-2xl);margin-bottom:var(--space-2)">Send us a message</h2>
+              <p style="font-size:var(--text-sm);margin-bottom:var(--space-6)">We respond to all inquiries within 48 hours.</p>
+
+              <!-- Tab selector -->
+              <div class="contact-tabs" role="group" aria-label="Inquiry type">
+                <button class="contact-tab active" data-type="Clinical Partner">Clinical Partner</button>
+                <button class="contact-tab" data-type="Investor">Investor</button>
+                <button class="contact-tab" data-type="NGO / Procurement">NGO / Procurement</button>
+                <button class="contact-tab" data-type="Press">Press</button>
+                <button class="contact-tab" data-type="Other">Other</button>
+              </div>
+
+              <!-- The form -->
+              <form id="contact-form" novalidate>
+                <input type="hidden" name="inquiry_type" id="inquiry-type" value="Clinical Partner" />
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="first-name">First Name <span>*</span></label>
+                    <input class="form-input" type="text" id="first-name" name="first_name" placeholder="Jane" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="last-name">Last Name <span>*</span></label>
+                    <input class="form-input" type="text" id="last-name" name="last_name" placeholder="Smith" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="email">Email <span>*</span></label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="jane.smith@hospital.org" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="organization">Organization / Institution</label>
+                  <input class="form-input" type="text" id="organization" name="organization" placeholder="Henry Ford Health, UNICEF, etc." />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="role">Your Role</label>
+                  <select class="form-select" id="role" name="role">
+                    <option value="">Select your role…</option>
+                    <option>Neonatologist / NICU Director</option>
+                    <option>Pediatric Researcher</option>
+                    <option>Venture Capitalist / Angel Investor</option>
+                    <option>NGO / Global Health Organization</option>
+                    <option>Hospital Administrator / GPO</option>
+                    <option>Journalist / Media</option>
+                    <option>Student / Academic</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="message">Message <span>*</span></label>
+                  <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your interest in BlueBil, your institution, and how you'd like to collaborate…" required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Send Message</button>
+                <p class="form-note">By submitting, you agree to be contacted by the BlueBil team. We do not share your information with third parties.</p>
+              </form>
+
+              <!-- Success state (hidden until submission) -->
+              <div class="form-success" id="form-success" aria-live="polite">
+                <div class="form-success__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <h3>Message sent!</h3>
+                <p>Thank you for reaching out. A member of the BlueBil team will be in touch within 48 hours.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ────────────────────────────────────────────────── -->
+    <section class="section section--alt" aria-labelledby="faq-heading">
+      <div class="container container--lg">
+
+        <div class="section-header--center reveal">
+          <p class="label label--primary">FAQ</p>
+          <div class="divider divider--center"></div>
+          <h2 id="faq-heading">Common questions</h2>
+        </div>
+
+        <div class="faq-list reveal reveal-delay-1">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What stage is BlueBil at?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">BlueBil is a pre-clinical prototype with bench-top validation completed. We have demonstrated R² = 0.976 calibration linearity across the full clinical range using five silicone phantom models. Next steps are enhanced phantom fidelity with scattering and vascularity, followed by clinical pilot studies with NICU partners for paired TSB-TsB measurements.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is BlueBil FDA-approved?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Not yet. BlueBil is a research prototype. We intend to pursue FDA 510(k) clearance as a Class II non-invasive adjunctive screening device, with the Dräger JM-105 as predicate. A pre-submission Q-Sub meeting with FDA's ophthalmic devices division is planned following clinical pilot completion. BlueBil is not currently intended for clinical use.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How does it differ from existing TcB devices?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Transcutaneous bilirubinometers (TcB) measure bilirubin through skin reflectance, where melanin and subcutaneous fat systematically bias readings — causing documented underperformance in darker-skinned neonates. BlueBil shifts the measurement site entirely to the ocular sclera, which contains no melanin, delivering consistent accuracy across all demographics. BlueBil also operates during phototherapy, which disrupts TcB readings.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is it safe to shine light in a newborn's eye?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">Yes, when exposures are controlled within established safety thresholds. All BlueBil LED channels are maintained well below IEC 62471 photobiological safety limits: blue LED ≤0.1 mW/cm², IR LED ≤140 mW/cm². The device is also non-contact — it never touches the eye surface. Measurement occurs at a fixed standoff distance verified by the IR placement system.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is the target price for LMIC markets?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">We are targeting a LMIC-specific unit price under $400, compared to the $1,200–1,500 MSRP for the US market. At 10,000-unit production volume, we estimate COGS of approximately $38 per unit — leaving room for strong margins at LMIC pricing. Our LMIC model centers on institutional bulk procurement, NGO-subsidized distribution, and public health purchasing programs.</div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How can my institution run a pilot study?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">We are actively seeking NICU and newborn nursery partners to conduct paired TSB-TsB bilirubin measurements across diverse neonatal populations. We provide devices, protocol documentation, and data analysis support. Use the contact form above or email us directly — selecting "Clinical Partner" as your inquiry type helps us route your message to Nick or Ben quickly.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/animate.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('.site-nav');
+      if (nav) nav.classList.add('nav-light');
+
+      // ── Contact tab switching ──────────────────────────────
+      const tabs = document.querySelectorAll('.contact-tab');
+      const typeInput = document.getElementById('inquiry-type');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed','false'); });
+          tab.classList.add('active');
+          tab.setAttribute('aria-pressed','true');
+          if (typeInput) typeInput.value = tab.dataset.type;
+        });
+      });
+
+      // ── Form submission (demo — replace with real endpoint) ─
+      const form = document.getElementById('contact-form');
+      const successEl = document.getElementById('form-success');
+
+      if (form && successEl) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // Basic required-field check
+          const required = form.querySelectorAll('[required]');
+          let valid = true;
+          required.forEach(field => {
+            field.style.borderColor = '';
+            if (!field.value.trim()) {
+              field.style.borderColor = 'var(--color-error)';
+              valid = false;
+            }
+          });
+
+          if (!valid) return;
+
+          // Animate button
+          const btn = form.querySelector('.form-submit');
+          btn.textContent = 'Sending…';
+          btn.style.opacity = '0.7';
+
+          // Simulate async submission (replace with fetch() to your backend)
+          setTimeout(() => {
+            form.style.display = 'none';
+            successEl.classList.add('visible');
+          }, 1200);
+        });
+      }
+
+      // ── FAQ accordion ──────────────────────────────────────
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+
+          // Close all
+          faqItems.forEach(i => {
+            i.classList.remove('open');
+            i.querySelector('.faq-question').setAttribute('aria-expanded','false');
+          });
+
+          // Open clicked (unless it was already open)
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded','true');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

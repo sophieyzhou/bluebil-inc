@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BlueBil — A non-invasive ophthalmic device for equitable neonatal jaundice detection. Scleral bilirubin measurement that works across all skin tones." />
+  <title>BlueBil — Seeing Jaundice Differently</title>
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/nav-footer.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/device-hero.css" />
+</head>
+<body>
+
+  <!-- Nav injected by components.js -->
+  <div id="nav-mount"></div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-badge">University of Michigan</div>
+
+          <h1 class="hero-headline">
+            Seeing jaundice<br>
+            <em>differently.</em>
+          </h1>
+
+          <p class="hero-sub">
+            BlueBil is a handheld optical device that detects neonatal jaundice through the eye — not the skin — delivering fast, accurate, equitable bilirubin readings regardless of a baby's skin tone.
+          </p>
+
+          <div class="hero-actions">
+            <a href="science.html" class="btn btn--primary btn--lg">Explore the Science</a>
+            <a href="contact.html" class="btn btn--outline-light btn--lg">Partner With Us</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat__value"><span class="stat-counter" data-target="80" data-suffix="%">0%</span></div>
+              <div class="hero-stat__label">of pre-term newborns<br>affected by jaundice</div>
+            </div>
+            <div class="hero-stat" style="border-left:1px solid rgba(255,255,255,0.1);padding-left:var(--space-6)">
+              <div class="hero-stat__value"><span>100</span><span style="color:var(--color-accent)">×</span></div>
+              <div class="hero-stat__label">more severe in<br>low-income countries</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="device-hero-scene">
+
+            <div id="device-hero-wrapper"
+                 role="img"
+                 aria-label="BlueBil handheld bilirubin detection device">
+
+              <!-- Base device photo -->
+              <img
+                class="device-hero-img"
+                src="assets/images/device/device-hero-render.png"
+                alt="BlueBil pistol-grip handheld device with glowing blue optical probe"
+                draggable="false"
+              />
+
+              <!-- Sparkle overlay — breathes in and out -->
+              <div class="sparkle-overlay" aria-hidden="true"></div>
+
+              <!-- Second sparkle layer, offset timing for organic feel -->
+              <div class="sparkle-overlay sparkle-overlay--delayed" aria-hidden="true"></div>
+
+              <!-- Blue LED probe glow -->
+              <div class="probe-glow" aria-hidden="true"></div>
+
+            </div>
+
+            <!-- Ground shadow -->
+            <div class="device-shadow" aria-hidden="true"></div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">Scroll</div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         THE PROBLEM
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section" id="problem" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="problem-grid">
+
+          <div class="problem-text reveal">
+            <p class="label label--primary">The Problem</p>
+            <div class="divider"></div>
+            <h2 id="problem-heading">Current diagnostics fail where it matters most</h2>
+
+            <div style="margin-top:var(--space-6);">
+              <p>Neonatal jaundice is one of the most common conditions requiring medical attention in newborns. Untreated, severe hyperbilirubinemia crosses the blood-brain barrier — causing permanent neurological damage, cerebral palsy, deafness, or death.</p>
+              <p style="margin-top:var(--space-4)">Invasive heel-prick blood tests are accurate but painful, infection-prone, and rely on lab infrastructure unavailable in most of the world. Transcutaneous bilirubinometers measure skin reflectance — but <strong>melanin and skin thickness systematically bias their readings</strong>, leaving darker-skinned babies underserved.</p>
+              <p style="margin-top:var(--space-4)">Neither method works reliably <em>during phototherapy</em> — the exact moment when continuous monitoring is most critical.</p>
+            </div>
+
+            <div class="problem-stats reveal reveal-delay-2">
+              <div class="problem-stat-card">
+                <div class="problem-stat-card__value"><span class="stat-counter" data-target="114" data-suffix="M">0M</span></div>
+                <div class="problem-stat-card__label">newborns affected by jaundice globally each year</div>
+              </div>
+              <div class="problem-stat-card">
+                <div class="problem-stat-card__value" style="color:var(--color-accent)">7<sup>th</sup></div>
+                <div class="problem-stat-card__label">leading cause of neonatal death in Sub-Saharan Africa</div>
+              </div>
+              <div class="problem-stat-card">
+                <div class="problem-stat-card__value">r=<span>0.82</span></div>
+                <div class="problem-stat-card__label">TcB correlation in preterm infants — well below clinical threshold</div>
+              </div>
+              <div class="problem-stat-card">
+                <div class="problem-stat-card__value" style="color:#d94040"><span class="stat-counter" data-target="60" data-suffix="%">0%</span></div>
+                <div class="problem-stat-card__label">specificity of AI smartphone approaches — not clinically approved</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="problem-visual reveal reveal-delay-1">
+            <div class="comparison-title">Diagnostic Method Comparison</div>
+            <div class="problem-comparison">
+
+              <div class="comparison-row">
+                <div class="comparison-method">Heel-Prick TSB</div>
+                <div class="comparison-bar-wrap">
+                  <div class="comparison-bar comparison-bar--good" style="--bar-width:88%"></div>
+                </div>
+                <div class="comparison-note">Accurate</div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-method">TcB (light skin)</div>
+                <div class="comparison-bar-wrap">
+                  <div class="comparison-bar comparison-bar--ok" style="--bar-width:70%"></div>
+                </div>
+                <div class="comparison-note">Variable</div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-method">TcB (dark skin)</div>
+                <div class="comparison-bar-wrap">
+                  <div class="comparison-bar comparison-bar--bad" style="--bar-width:38%"></div>
+                </div>
+                <div class="comparison-note">Unreliable</div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-method">AI Camera Apps</div>
+                <div class="comparison-bar-wrap">
+                  <div class="comparison-bar comparison-bar--bad" style="--bar-width:28%"></div>
+                </div>
+                <div class="comparison-note">~60% spec.</div>
+              </div>
+
+              <div class="comparison-row">
+                <div class="comparison-method" style="color:var(--color-primary);font-weight:700">BlueBil (TsB)</div>
+                <div class="comparison-bar-wrap">
+                  <div class="comparison-bar comparison-bar--best" style="--bar-width:92%"></div>
+                </div>
+                <div class="comparison-note" style="color:var(--color-primary);font-weight:600">Target ±2 mg/dL</div>
+              </div>
+
+            </div>
+            <p style="font-size:var(--text-xs);color:var(--color-ink-muted);margin-top:var(--space-3);font-style:italic">Relative accuracy — illustrative. BlueBil in pre-clinical validation phase.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         THE SOLUTION
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="solution" aria-labelledby="solution-heading">
+      <div class="container">
+        <div class="section-header--center reveal">
+          <p class="label label--primary">Our Solution</p>
+          <div class="divider divider--center"></div>
+          <h2 id="solution-heading">The eye doesn't lie about bilirubin</h2>
+          <p style="margin-top:var(--space-4);font-size:var(--text-md)">The ocular sclera yellows predictably with bilirubin deposition, independent of skin tone. BlueBil measures this directly — actively, accurately, equitably.</p>
+        </div>
+
+        <div class="features-grid stagger-children">
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M21.17 8A10 10 0 0 0 12 2"/>
+              </svg>
+            </div>
+            <h3>Scleral Measurement</h3>
+            <p>By measuring blue light absorption in the white of the eye rather than skin, BlueBil completely bypasses melanin interference — delivering consistent accuracy across all demographics.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>3-Wavelength Optics</h3>
+            <p>A 470 nm blue LED targets bilirubin. A 530 nm green LED corrects for hemoglobin overlap. An 850 nm IR LED verifies probe distance. Three channels, one robust measurement.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3>Results in &lt;3 Seconds</h3>
+            <p>A six-stage firmware state machine handles positioning, measurement, and verification automatically. Results display in mg/dL on an integrated OLED — no lab, no consumables.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Safe by Design</h3>
+            <p>All ocular LED exposures held below established safety thresholds (blue: ≤0.1 mW/cm², IR: ≤140 mW/cm²). Non-contact — the device never touches the eye surface.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3>Built for LMICs</h3>
+            <p>Reusable, consumable-free, infrastructure-independent. Target cost under $400 for low-income market entry. Validated with clinicians in Ghana and Detroit.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3>Works During Phototherapy</h3>
+            <p>Because measurement is taken from the eye rather than the skin, phototherapy light doesn't interfere — enabling continuous non-invasive monitoring throughout treatment.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         HOW IT WORKS
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section" id="how-it-works" aria-labelledby="hiw-heading">
+      <div class="container">
+        <div class="section-header--center reveal">
+          <p class="label label--accent">How It Works</p>
+          <div class="divider divider--center"></div>
+          <h2 id="hiw-heading">From bedside to result in seconds</h2>
+        </div>
+
+        <div class="steps-strip reveal reveal-delay-1">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div>
+              <h3 class="step__title">Position</h3>
+              <p class="step__desc">The IR channel pulses continuously, displaying a live distance bar on the OLED. The device confirms correct probe-to-eye placement before proceeding.</p>
+              <span class="step__time">~1 second</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__number">2</div>
+            <div>
+              <h3 class="step__title">Measure</h3>
+              <p class="step__desc">Blue and green LEDs fire in sequence. 16-sample ADC averaging captures reflectance. Two IR distance checks bracket the measurement for validation.</p>
+              <span class="step__time">~1.5 seconds</span>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step__number">3</div>
+            <div>
+              <h3 class="step__title">Result</h3>
+              <p class="step__desc">The ESP32 applies the Beer-Lambert ratiometric model. Bilirubin concentration displays in mg/dL with a treatment recommendation — no lab required.</p>
+              <span class="step__time">&lt;0.5 seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:var(--space-10)" class="reveal reveal-delay-3">
+          <a href="science.html" class="btn btn--outline">See the Full Technical Architecture →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         DEVICE SECTION
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section device-section" id="device" aria-labelledby="device-heading">
+      <div class="container">
+        <div class="device-layout">
+
+          <div class="device-img-wrap reveal">
+            <div class="device-img-frame">
+              <img src="assets/images/device/device-baby.jpeg" alt="BlueBil device being used near an infant's eye" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <p class="label" style="color:var(--color-ice)">The Device</p>
+            <div class="divider"></div>
+            <h2 style="color:#fff" id="device-heading">Pistol-grip. Non-contact. NICU-ready.</h2>
+            <p style="margin-top:var(--space-4);color:rgba(238,241,246,0.7)">
+              Modeled ergonomically after a tympanic thermometer for single-handed bedside use. A rubber barrel guard creates a light seal against the periorbital region, blocking ambient interference. The ABS enclosure houses all electronics — battery, OLED, PCB, and sensors — with no consumables required.
+            </p>
+
+            <div class="device-specs">
+              <div class="spec-row">
+                <div class="spec-label">Measurement Range</div>
+                <div class="spec-value"><span>0 – 25</span> mg/dL</div>
+              </div>
+              <div class="spec-row">
+                <div class="spec-label">Target Accuracy</div>
+                <div class="spec-value">±<span>2</span> mg/dL vs. TSB</div>
+              </div>
+              <div class="spec-row">
+                <div class="spec-label">Cycle Time</div>
+                <div class="spec-value">&lt;<span>3</span> seconds</div>
+              </div>
+              <div class="spec-row">
+                <div class="spec-label">Wavelengths</div>
+                <div class="spec-value"><span>470 nm</span> · <span>530 nm</span> · <span>850 nm</span></div>
+              </div>
+              <div class="spec-row">
+                <div class="spec-label">Calibration R²</div>
+                <div class="spec-value"><span>0.976</span> (bench-top, phantom)</div>
+              </div>
+              <div class="spec-row">
+                <div class="spec-label">Target Unit Cost</div>
+                <div class="spec-value">&lt;<span>$400</span> LMIC pricing</div>
+              </div>
+            </div>
+
+            <div style="margin-top:var(--space-8)">
+              <a href="science.html" class="btn btn--primary">Full Technical Specs</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         TEAM
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="team" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header--center reveal">
+          <p class="label label--primary">The Team</p>
+          <div class="divider divider--center"></div>
+          <h2 id="team-heading">Built by engineers who care</h2>
+          <p style="margin-top:var(--space-4)">Four University of Michigan co-founders — biomedical engineers, an economist, and a computer scientist — united by a shared conviction that every baby deserves equitable care.</p>
+        </div>
+
+        <div class="team-grid stagger-children">
+
+          <div class="team-card">
+            <div class="team-avatar"><img src="assets/images/headshots/nick.png" alt="Nick Litsas"></div>
+            <h3>Nicholas Litsas</h3>
+            <div class="team-role">CEO &amp; Co-Founder</div>
+            <div class="team-dept">Biomedical Engineering, U of M</div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar"><img src="assets/images/headshots/ben.png" alt="Ben Barron"></div>
+            <h3>Benjamin Barron</h3>
+            <div class="team-role">CTO &amp; Co-Founder</div>
+            <div class="team-dept">Biomedical Engineering, U of M</div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar"><img src="assets/images/headshots/spero.png" alt="Spero Litsas"></div>
+            <h3>Spero Litsas</h3>
+            <div class="team-role">COO &amp; Co-Founder</div>
+            <div class="team-dept">Economics, U of M</div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar"><img src="assets/images/headshots/sophie.png" alt="Sophie Zhou"></div>
+            <h3>Sophie Zhou</h3>
+            <div class="team-role">CFO &amp; Co-Founder</div>
+            <div class="team-dept">Computer Science, U of M</div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:var(--space-10)" class="reveal">
+          <a href="about.html" class="btn btn--outline">Meet the Full Team &amp; Our Mission →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         CTA BANNER
+    ═══════════════════════════════════════════════════════ -->
+    <section class="section" aria-label="Call to action">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Ready to help us reach every NICU?</h2>
+          <p>We're seeking clinical partners, investors, and global health organizations to bring BlueBil from prototype to deployment. Every conversation matters.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn--accent btn--lg">Get In Touch</a>
+            <a href="science.html" class="btn btn--outline-light btn--lg">Read the Research</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer injected by components.js -->
+  <div id="footer-mount"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/animate.js"></script>
+  <script>
+    // Animate comparison bars when visible
+    const bars = document.querySelectorAll('.comparison-bar');
+    const barObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('animated'), 200);
+          barObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    bars.forEach(b => barObs.observe(b));
+  </script>
+  <script src="assets/js/device-hero.js"></script>
+</body>
+</html>

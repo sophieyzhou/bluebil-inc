@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BlueBil's scientific approach: multiwavelength scleral reflectance spectroscopy using Beer-Lambert Law for non-invasive neonatal bilirubin detection." />
+  <title>The Science — BlueBil</title>
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/nav-footer.css" />
+  <link rel="stylesheet" href="assets/css/science.css" />
+</head>
+<body>
+
+  <div id="nav-mount"></div>
+
+  <main>
+
+    <!-- ── PAGE HERO ─────────────────────────────────────────── -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <p class="label" style="color:var(--color-ice)">The Science</p>
+          <h1>Multiwavelength scleral<br>reflectance spectroscopy</h1>
+          <p>BlueBil exploits a simple truth: bilirubin absorbs blue light. By actively measuring that absorption in the ocular sclera — and correcting for hemoglobin and distance — we achieve robust, skin-tone-independent bilirubin quantification.</p>
+          <div style="margin-top:var(--space-8);display:flex;gap:var(--space-4);flex-wrap:wrap">
+            <a href="#sensing" class="btn btn--primary">Sensing Architecture</a>
+            <a href="#validation" class="btn btn--outline-light">Validation Data</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY THE SCLERA ─────────────────────────────────────── -->
+    <section class="section" id="sensing" aria-labelledby="sclera-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="label label--primary">Why the Sclera</p>
+          <div class="divider"></div>
+          <h2 id="sclera-heading">A consistent optical medium, regardless of race</h2>
+          <p style="max-width:680px;margin-top:var(--space-4)">Melanin, the pigment responsible for skin tone variation, is absent from the scleral tissue. Bilirubin deposits uniformly in the sclera as serum levels rise — creating a predictable, measurable optical signal that works identically across all patients.</p>
+        </div>
+
+        <div class="formula-block reveal reveal-delay-1" style="margin-bottom:var(--space-12)">
+          <div class="formula-label">Beer-Lambert Law — Foundation of BlueBil</div>
+          <div class="formula-eq"><span>A</span> = log(<em>I₀</em> / <span>I</span>)</div>
+          <div class="formula-key">
+            <div class="formula-key-item"><strong>A</strong> — Absorbance</div>
+            <div class="formula-key-item"><strong>I₀</strong> — Reference intensity (white phantom calibration)</div>
+            <div class="formula-key-item"><strong>I</strong> — Measured intensity from sclera</div>
+          </div>
+        </div>
+
+        <!-- Wavelength cards -->
+        <div class="section-header reveal">
+          <p class="label label--primary">Three-Channel Optical Architecture</p>
+          <div class="divider"></div>
+          <h2>Each wavelength plays a distinct role</h2>
+        </div>
+
+        <div class="wavelength-grid reveal reveal-delay-1">
+
+          <div class="wavelength-card wavelength-card--blue">
+            <div class="wavelength-role">Primary Channel</div>
+            <div class="wavelength-nm wavelength-nm--blue">470<span class="wavelength-unit">nm</span></div>
+            <h3>Blue LED — Bilirubin</h3>
+            <p>Bilirubin absorbs maximally near 470 nm. The blue channel is the primary signal — absorbance at this wavelength is the core measure of scleral bilirubin concentration. LED current limited to ≤0.1 mW/cm² for ocular safety.</p>
+          </div>
+
+          <div class="wavelength-card wavelength-card--green">
+            <div class="wavelength-role">Reference Channel</div>
+            <div class="wavelength-nm wavelength-nm--green">530<span class="wavelength-unit">nm</span></div>
+            <h3>Green LED — Hemoglobin Correction</h3>
+            <p>Hemoglobin absorbs strongly near 540 nm, overlapping with the blue bilirubin channel. The green channel captures this vascular contribution, enabling differential correction that isolates the bilirubin-specific signal.</p>
+          </div>
+
+          <div class="wavelength-card wavelength-card--ice">
+            <div class="wavelength-role">Distance Verification</div>
+            <div class="wavelength-nm wavelength-nm--ice">850<span class="wavelength-unit">nm</span></div>
+            <h3>IR LED — Pathlength Control</h3>
+            <p>IR reflectance is insensitive to tissue pigmentation but highly sensitive to probe-to-tissue distance. Two IR checks bracket every measurement, validating consistent optical pathlength. Exposure kept below 140 mW/cm².</p>
+          </div>
+
+        </div>
+
+        <!-- Multivariate model -->
+        <div style="margin-top:var(--space-12)" class="reveal">
+          <div class="formula-block">
+            <div class="formula-label">Ratiometric Estimation Model</div>
+            <div class="formula-eq" style="font-size:clamp(1rem, 2.5vw, 1.8rem)">
+              [<span>Bil</span>] = <em>α</em> · (A<sub style="font-style:normal;font-size:0.6em">blue</sub> / A<sub style="font-style:normal;font-size:0.6em">green</sub>) + <em>β</em> · V<sub style="font-style:normal;font-size:0.6em">IR</sub> + <em>γ</em>
+            </div>
+            <div class="formula-key">
+              <div class="formula-key-item"><strong>α, β, γ</strong> — Calibration coefficients</div>
+              <div class="formula-key-item"><strong>A<sub>blue</sub>/A<sub>green</sub></strong> — Isolates bilirubin from hemoglobin background</div>
+              <div class="formula-key-item"><strong>V<sub>IR</sub></strong> — Corrects for pathlength variation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FIRMWARE STATE MACHINE ─────────────────────────────── -->
+    <section class="section section--alt" id="firmware" aria-labelledby="firmware-heading">
+      <div class="container">
+        <div class="grid-2" style="align-items:start;gap:var(--space-16)">
+
+          <div class="reveal">
+            <p class="label label--primary">Firmware</p>
+            <div class="divider"></div>
+            <h2 id="firmware-heading">Six-stage measurement state machine</h2>
+            <p style="margin-top:var(--space-4)">The ESP32-WROOM-32 runs a deterministic state machine triggered by a physical trigger button. Every measurement is bracketed by placement validation — a failed IR check returns to idle and prompts repositioning, never silently producing a bad reading.</p>
+            <p style="margin-top:var(--space-4)">The firmware is organized into modular files: <code style="font-size:var(--text-sm);background:var(--color-primary-tint);color:var(--color-primary);padding:0.1em 0.4em;border-radius:4px">config.h</code>, <code style="font-size:var(--text-sm);background:var(--color-primary-tint);color:var(--color-primary);padding:0.1em 0.4em;border-radius:4px">sensors.cpp</code>, <code style="font-size:var(--text-sm);background:var(--color-primary-tint);color:var(--color-primary);padding:0.1em 0.4em;border-radius:4px">algorithm.cpp</code>, <code style="font-size:var(--text-sm);background:var(--color-primary-tint);color:var(--color-primary);padding:0.1em 0.4em;border-radius:4px">display.cpp</code>, and <code style="font-size:var(--text-sm);background:var(--color-primary-tint);color:var(--color-primary);padding:0.1em 0.4em;border-radius:4px">measurement.cpp</code>.</p>
+          </div>
+
+          <div class="state-machine reveal reveal-delay-1">
+
+            <div class="state-step">
+              <div class="state-dot"></div>
+              <div class="state-content">
+                <h4>Positioning</h4>
+                <p>IR LED pulses continuously. Live distance displayed as OLED bar graph. Device waits for entry into calibrated distance window.</p>
+                <span class="state-tag">IR continuous</span>
+              </div>
+            </div>
+
+            <div class="state-step">
+              <div class="state-dot"></div>
+              <div class="state-content">
+                <h4>Blue Measurement</h4>
+                <p>IR off. Blue LED on for 500 ms. 16-sample ADC average taken at midpoint. OLED displays "Measuring…"</p>
+                <span class="state-tag">470 nm · 16-sample avg</span>
+              </div>
+            </div>
+
+            <div class="state-step">
+              <div class="state-dot"></div>
+              <div class="state-content">
+                <h4>IR Check 1</h4>
+                <p>100 ms IR pulse. If placement has drifted outside the window, measurement fails and device returns to idle. Otherwise continues.</p>
+                <span class="state-tag" style="background:var(--color-ice-tint);color:var(--color-ice-deep)">850 nm · pass/fail</span>
+              </div>
+            </div>
+
+            <div class="state-step">
+              <div class="state-dot"></div>
+              <div class="state-content">
+                <h4>Green Measurement</h4>
+                <p>Green LED on for 500 ms. Same 16-sample averaging protocol as blue channel. Hemoglobin reference captured.</p>
+                <span class="state-tag">530 nm · 16-sample avg</span>
+              </div>
+            </div>
+
+            <div class="state-step">
+              <div class="state-dot"></div>
+              <div class="state-content">
+                <h4>IR Check 2</h4>
+                <p>Second 100 ms IR pulse validation. Mean of both IR readings used in the estimation model for pathlength correction.</p>
+                <span class="state-tag" style="background:var(--color-ice-tint);color:var(--color-ice-deep)">850 nm · averaged</span>
+              </div>
+            </div>
+
+            <div class="state-step">
+              <div class="state-dot"></div>
+              <div class="state-content">
+                <h4>Result Display</h4>
+                <p>Bilirubin concentration calculated and displayed in mg/dL with treatment recommendation. Persists until next trigger press.</p>
+                <span class="state-tag" style="background:var(--color-accent-tint);color:var(--color-accent-dark)">~2–3 sec total</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VALIDATION ─────────────────────────────────────────── -->
+    <section class="section" id="validation" aria-labelledby="validation-heading">
+      <div class="container">
+
+        <div class="section-header--center reveal">
+          <p class="label label--primary">Validation</p>
+          <div class="divider divider--center"></div>
+          <h2 id="validation-heading">Bench-top results</h2>
+          <p style="margin-top:var(--space-4);max-width:640px">Five silicone hemisphere phantoms were doped with calibrated yellow pigment concentrations matched to published ocular bilirubin color cards using a laboratory spectrophotometer. Each phantom was measured five times (quintuplicate).</p>
+          <img src="assets/images/science/phantom-samples.jpeg" alt="Five silicone scleral phantom samples" style="width:100%;border-radius:12px;margin-top:1.5rem">
+        </div>
+
+        <div class="data-cards reveal reveal-delay-1">
+          <div class="data-card">
+            <div class="data-card__value">0.976</div>
+            <div class="data-card__label">Calibration R² — blue-channel absorbance vs. bilirubin concentration across 0–22.5 mg/dL</div>
+          </div>
+          <div class="data-card data-card--ice">
+            <div class="data-card__value">&lt;1 mg/dL</div>
+            <div class="data-card__label">Standard deviation across five quintuplicate trials — all concentration levels</div>
+          </div>
+          <div class="data-card data-card--accent">
+            <div class="data-card__value">5</div>
+            <div class="data-card__label">Phantom concentrations: 0, 2, 10, 17, and 22.5 mg/dL — spanning full clinical range</div>
+          </div>
+        </div>
+
+        <div style="margin-top:var(--space-10);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-8);box-shadow:var(--shadow-sm)" class="reveal reveal-delay-2">
+          <p class="label label--primary">Calibration Equation</p>
+          <div style="font-family:var(--font-display);font-size:clamp(var(--text-xl),3vw,var(--text-3xl));color:var(--color-primary);margin:var(--space-4) 0;font-style:italic">
+            A = 0.0048c + 0.00794 &nbsp;&nbsp; (R² = 0.976)
+          </div>
+          <p style="font-size:var(--text-sm)">Single-wavelength blue-channel calibration. Coefficients will be updated following three-wavelength clinical pilot validation incorporating hemoglobin correction and pathlength compensation.</p>
+          <img src="assets/images/science/calibration-curve.png" alt="BlueBil calibration curve R²=0.976" style="width:100%;border-radius:12px;margin-top:1.5rem">
+        </div>
+
+        <!-- Limitations -->
+        <div style="margin-top:var(--space-16)">
+          <div class="section-header reveal">
+            <p class="label label--accent">Known Limitations</p>
+            <div class="divider"></div>
+            <h2>What we know, and what comes next</h2>
+            <p style="max-width:620px;margin-top:var(--space-4)">Scientific honesty is core to our approach. The current phantom models are simplified — we acknowledge three key gaps and our path to addressing them.</p>
+          </div>
+
+          <div class="limitations-grid reveal reveal-delay-1">
+            <div class="limitation-card">
+              <h4>Light Scattering</h4>
+              <p>Silicone rubber lacks the fibrous collagen microstructure of real scleral tissue, which affects how light scatters and penetrates. Next step: TiO₂-doped scattering phantoms to better model scleral optics.</p>
+            </div>
+            <div class="limitation-card limitation-card--accent">
+              <h4>Hemoglobin Interference</h4>
+              <p>Phantoms contain no vascular component, so hemoglobin's spectral contribution near 540 nm has not yet been incorporated into calibration. Next step: red-dye vascularity phantoms + dual-wavelength model refinement.</p>
+            </div>
+            <div class="limitation-card limitation-card--ice">
+              <h4>Scleral Thickness Variation</h4>
+              <p>Scleral thickness varies across the neonatal population and influences optical pathlength. Homogeneous phantoms cannot capture inter-subject variability. Next step: clinical pilot with paired TSB-BlueBil measurements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── REGULATORY ─────────────────────────────────────────── -->
+    <section class="section section--alt" id="regulatory" aria-labelledby="reg-heading">
+      <div class="container">
+        <div class="section-header--center reveal">
+          <p class="label label--primary">Regulatory Pathway</p>
+          <div class="divider divider--center"></div>
+          <h2 id="reg-heading">510(k) clearance via Dräger JM-105 predicate</h2>
+          <p style="margin-top:var(--space-4);max-width:660px">BlueBil is intended as a non-invasive adjunctive screening tool — not an initial replacement for TSB confirmation. We are pursuing FDA Class II clearance via 510(k) premarket notification.</p>
+        </div>
+
+        <div class="reg-grid reveal reveal-delay-1">
+
+          <div class="reg-item">
+            <div class="reg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Predicate Device</h4>
+              <p>Dräger JM-105 (cleared under IYO as Class II). Substantially equivalent intended use — non-invasive bilirubin estimation in neonates. Our scleral site strengthens rather than complicates the equivalence argument.</p>
+            </div>
+          </div>
+
+          <div class="reg-item">
+            <div class="reg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Photobiological Safety</h4>
+              <p>IEC 62471 compliance required for eye-directed LED system. All exposures maintained well below established thresholds: blue ≤0.1 mW/cm², IR ≤140 mW/cm².</p>
+            </div>
+          </div>
+
+          <div class="reg-item">
+            <div class="reg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Analytical Performance</h4>
+              <p>510(k) will require accuracy vs. TSB across a diverse neonatal population. Clinical pilot planned with domestic and international NICU partners including Komfo Anokye Teaching Hospital, Ghana.</p>
+            </div>
+          </div>
+
+          <div class="reg-item">
+            <div class="reg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Q-Sub Meeting Planned</h4>
+              <p>Given the ocular measurement site, we plan a pre-submission meeting with FDA's ophthalmic devices division following completion of our clinical pilot study to clarify review pathway.</p>
+            </div>
+          </div>
+
+          <div class="reg-item">
+            <div class="reg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Reimbursement Path</h4>
+              <p>TSB billed under CPT 82247 at ~$10–15 (Medicare). TcB already reimbursed in NICUs. BlueBil targets integration into existing DRG bundles, with future CPT code development post-clearance.</p>
+            </div>
+          </div>
+
+          <div class="reg-item">
+            <div class="reg-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>IP &amp; Patentability</h4>
+              <p>Engaged University of Michigan Innovation Partnerships for formal prior art search. The combination of three-wavelength active scleral probe with handheld pathlength-corrected form factor appears novel over existing prior art.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ────────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal" style="background:linear-gradient(135deg,var(--color-dark) 0%,var(--color-dark-mid) 50%,#1a3a60 100%);border:1px solid rgba(168,216,248,0.15)">
+          <h2 style="color:#fff">Want to collaborate on validation?</h2>
+          <p style="color:rgba(238,241,246,0.75)">We're actively seeking NICU clinical partners, biomedical optics researchers, and global health organizations. Let's build the evidence together.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn--accent btn--lg">Contact the Team</a>
+            <a href="about.html" class="btn btn--outline-light btn--lg">About BlueBil</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-mount"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/animate.js"></script>
+  <script>
+    // Light nav treatment on this page (white bg after scroll)
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav = document.querySelector('.site-nav');
+      if (nav) nav.classList.add('nav-light');
+    });
+  </script>
+</body>
+</html>

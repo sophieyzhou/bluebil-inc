@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBil Device Hero Demo</title>
+  <link rel="stylesheet" href="assets/css/device-hero.css" />
+</head>
+<body>
+  <main class="demo-shell">
+    <section class="device-hero-section">
+      <div class="device-hero-copy">
+        <p class="eyebrow">Non-invasive bilirubin insight</p>
+        <h1>Designed for earlier newborn jaundice screening.</h1>
+        <p>
+          A handheld optical screening concept built around intuitive positioning,
+          fast measurement feedback, and clear bilirubin guidance.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Partner with us</a>
+          <a href="science.html" class="btn btn-secondary">See the science</a>
+        </div>
+      </div>
+
+      <div class="device-hero-visual" aria-label="Interactive BlueBil device graphic">
+        <div class="particle-field" aria-hidden="true"></div>
+
+        <div class="device-card" data-device-card>
+          <img
+            class="device-render"
+            src="assets/images/device/device-hero-render.png"
+            alt="BlueBil handheld bilirubin screening device"
+          />
+
+          <div class="oled-overlay" data-oled>
+            <div class="oled-brand">BlueBil</div>
+            <div class="oled-rule"></div>
+            <div class="oled-main" data-oled-main>14.5</div>
+            <div class="oled-sub" data-oled-sub>mg/dL</div>
+            <div class="oled-bar" data-oled-bar><span></span></div>
+          </div>
+
+          <span class="probe-glow" aria-hidden="true"></span>
+
+          <div class="callout callout-oled">OLED guidance</div>
+          <div class="callout callout-probe">Optical sensor</div>
+          <div class="callout callout-trigger">Measurement trigger</div>
+          <div class="callout callout-grip">Ergonomic grip</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-preview">
+      <img src="assets/images/device/device-hand.png" alt="BlueBil device held naturally in a clinician's hand" />
+      <div>
+        <p class="eyebrow">Scale & ergonomics</p>
+        <h2>Built to feel familiar in clinical workflows.</h2>
+        <p>
+          The handle-forward form factor helps communicate that BlueBil is meant to be
+          approachable, portable, and easy to position during newborn care.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/device-hero.js"></script>
+</body>
+</html>
