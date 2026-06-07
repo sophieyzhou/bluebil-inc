@@ -61,10 +61,20 @@
   height: auto;
 
   opacity: 0.96;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    filter var(--duration-base) var(--ease-out);
 
   filter:
     drop-shadow(0 0 36px rgba(200,234,255,0.16))
     drop-shadow(0 0 90px rgba(168,216,248,0.10));
+}
+.mission-hero-visual:hover .mission-hero-globe {
+  transform: translateY(-8px) scale(1.045);
+
+  filter:
+    drop-shadow(0 0 44px rgba(200,234,255,0.22))
+    drop-shadow(0 0 120px rgba(168,216,248,0.18));
 }
 
 @media (max-width: 900px) {

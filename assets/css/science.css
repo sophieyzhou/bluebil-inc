@@ -254,41 +254,41 @@
 
 .diagram-highlight[data-part="oled"] {
   left: 30%;
-  top: 19%;
+  top: 15%;
   width: 24%;
   height: 13%;
-  transform: rotate(-18deg);
+  transform: rotate(-19deg);
 }
 
 .diagram-highlight[data-part="barrel"] {
-  left: 5%;
-  top: 28%;
+  left: 6%;
+  top: 23%;
   width: 16%;
-  height: 16%;
+  height: 21%;
   transform: rotate(-15deg);
 }
 
 .diagram-highlight[data-part="sensor"] {
   left: 8%;
-  top: 32.5%;
-  width: 5.5%;
+  top: 30%;
+  width: 5%;
   aspect-ratio: 1 / 2;
 
   border-radius: 50%;
 
-  transform: rotate(-20deg);
+  transform: rotate(-24deg);
 }
 
 .diagram-highlight[data-part="trigger"] {
-  left: 34%;
-  top: 37%;
+  left: 33%;
+  top: 35%;
   width: 12%;
-  height: 10%;
+  height: 11%;
 }
 
 .diagram-highlight[data-part="grip"] {
-  left: 46%;
-  top: 30%;
+  left: 47%;
+  top: 33%;
   width: 25%;
   height: 36%;
   transform: rotate(-25deg);
@@ -296,9 +296,9 @@
 
 .diagram-highlight[data-part="charging"] {
   left: 55%;
-  top: 57.5%;
-  width: 22%;
-  height: 6%;
+  top: 58.5%;
+  width: 21%;
+  height: 6.5%;
   transform: rotate(-25deg);
 }
 
